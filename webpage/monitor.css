@@ -1,0 +1,153 @@
+html {
+  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+  width: 800px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 0;
+  background-image: url("arch.jpg");
+  color: white;
+}
+
+h1, h2 {
+  font-family: 'Bebas Neue', cursive;
+}
+
+/* header styles */
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom:0;
+}
+
+header p {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 0;
+}
+
+/* section styles */
+
+section article {
+  width: 365px;
+  height: 160px;
+  float: left;
+  /* border: 1px solid white; */
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+article .meterheadersection {
+    height: 15px;
+    width: 100%;
+    /* background-color: blue; */
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+article .metersection {
+    height: 80px;
+    width: 100%;
+    /* background-color: red; */
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+article .meternamesection {
+    height: 15px;
+    width: 100%;
+    /* background-color: blue; */
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+article div .meterheader {
+    width: 100px;
+    height: 20px;
+    display: inline-block;
+    /* background-color: yellow; */
+    margin-left:10px;
+    margin-right:10px;
+    font-weight: bold; 
+    margin-top: -10px; /* no idea why, but that's needed */
+}
+
+article div .metername {
+    width: 100px;
+    height: 20px;
+    display: inline-block;
+    /* background-color: gray; */
+    margin-left:10px;
+    margin-right:10px;
+    font-weight: bold; 
+
+    position: relative;
+    top: -10px;
+}
+
+
+article div canvas {
+    width: 100px;
+    height: 80px;
+    display: inline-block;
+    /* background-color: green; */
+    margin-left:10px;
+    margin-right:10px;
+}
+
+article .rawsection {
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+article span {
+    margin-right: 10px;
+}
+
+section p {
+  margin: 5px 0;
+}
+
+section ul {
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  margin-bottom: 10px;
+  text-align:center;
+}
+
+#error
+{
+    height:100%;
+    width:100%;
+    background-color:black;
+    display:none;
+    text-align:center;
+    margin: 0;
+    padding-top:130px;
+}
+
+#error h3
+{
+    color: red;
+    font-size: 3rem;
+    font-family: 'Bebas Neue', cursive;
+    margin-bottom:0;
+}

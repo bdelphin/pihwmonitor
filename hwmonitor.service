@@ -1,0 +1,13 @@
+[Unit]
+Description=PiHWMonitor Service
+After=multi-user.target
+
+[Service]
+WorkingDirectory=/tmp
+User=root
+Type=forking
+ExecStart=/usr/bin/sh /home/baptiste/Projects/PiHWMonitor/hwmonitor_start.sh
+ExecStop=/usr/bin/sh /home/baptiste/Projects/PiHWMonitor/hwmonitor_stop.sh
+
+[Install]
+WantedBy=default.target
