@@ -1,0 +1,13 @@
+[Unit]
+Description=RPiAPI Service
+After=multi-user.target
+
+[Service]
+WorkingDirectory=/tmp
+User=root
+Type=forking
+ExecStart=/usr/bin/sh /home/pi/rpi_api_start.sh
+ExecStop=/usr/bin/sh /home/pi/rpi_api_stop.sh
+
+[Install]
+WantedBy=default.target
