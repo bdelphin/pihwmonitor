@@ -20,12 +20,12 @@ For now, it's only designed to monitor AMD GPU stats. Nvidia GPU support should 
 - create a setup.exe file, for automating the planned task creation
 
 ### GNU/Linux TODO-list :
-- modify otg_ip.py script, add permanent supervision of the OTG network interface (if it disappears, this means the Raspberry Pi has been unplugged and we need to watch for its reconnection)
+- ~~modify otg_ip.py script, add permanent supervision of the OTG network interface (if it disappears, this means the Raspberry Pi has been unplugged and we need to watch for its reconnection)~~
 - create an install script, which will create the systemd service
 - nvidia GPU support (https://github.com/wookayin/gpustat)
 
 ### General TODO-list :
-- fix some gauges names
+- ~~fix some gauges names~~
 - config file (to specify components to monitor)
 
 ## How it works
