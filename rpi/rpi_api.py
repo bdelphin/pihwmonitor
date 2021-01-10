@@ -11,17 +11,17 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 @cross_origin()
 def reboot():
     if subprocess.run('reboot', shell=True, stdout=subprocess.DEVNULL).returncode == 0:
-            return 'OK'
-        else:
-            return 'NOK'
+        return 'OK'
+    else:
+        return 'NOK'
 
 @app.route('/shutdown')
 @cross_origin()
 def shutdown():
     if subprocess.run('shutdown now', shell=True, stdout=subprocess.DEVNULL).returncode == 0:
-            return 'OK'
-        else:
-            return 'NOK'
+        return 'OK'
+    else:
+        return 'NOK'
 
 
 if __name__ == '__main__':
