@@ -3,6 +3,8 @@
 
 PiHWMonitor is an external hardware monitor for a computer, using a Raspberry Pi and a 5" display.
 
+![screenshot](screenshot.png?raw=true "Screenshot")
+
 ## Host compatibility
 
 PiHWMonitor aims to be cross-platform, you should soon be able to monitor your Windows or GNU/Linux system. For now, the host software is only designed for GNU/Linux.
