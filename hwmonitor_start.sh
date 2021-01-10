@@ -21,4 +21,7 @@
 /usr/bin/python /home/baptiste/Projects/PiHWMonitor/otg_ip.py -y
 /usr/bin/echo "USB OTG IP assigned."
 
+# Monitor OTG IP (if device reboot, reassign)
+/usr/bin/python /home/baptiste/Projects/PiHWMonitor/check_otg.py &
+
 /usr/bin/echo "PiHWMonitor service launched."

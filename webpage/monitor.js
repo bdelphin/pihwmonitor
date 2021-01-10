@@ -72,21 +72,21 @@ var gauge_default_options =
   highDpiSupport: true,     // High resolution support
 }; 
 
-var cpu_gauge_1 = createGauge(cpu_canvas_1, gauge_default_options, 100, 0, 32, 50);
-var cpu_gauge_2 = createGauge(cpu_canvas_2, gauge_default_options, 100, 20, 32, 40);
-var cpu_gauge_3 = createGauge(cpu_canvas_3, gauge_default_options, 4.5, 2.2, 32, 2.4);
+var cpu_gauge_1 = createGauge(cpu_canvas_1, gauge_default_options, 100, 0, 32, 100);
+var cpu_gauge_2 = createGauge(cpu_canvas_2, gauge_default_options, 100, 20, 32, 100);
+var cpu_gauge_3 = createGauge(cpu_canvas_3, gauge_default_options, 4.5, 2.2, 32, 4.5);
 
-var gpu_gauge_1 = createGauge(gpu_canvas_1, gauge_default_options, 110, 20, 32, 40);
-var gpu_gauge_2 = createGauge(gpu_canvas_2, gauge_default_options, 100, 0, 32, 50);
-var gpu_gauge_3 = createGauge(gpu_canvas_3, gauge_default_options, 3000, 0, 32, 0);
+var gpu_gauge_1 = createGauge(gpu_canvas_1, gauge_default_options, 110, 20, 32, 110);
+var gpu_gauge_2 = createGauge(gpu_canvas_2, gauge_default_options, 100, 0, 32, 100);
+var gpu_gauge_3 = createGauge(gpu_canvas_3, gauge_default_options, 3000, 0, 32, 3000);
 
-var watercooling_gauge_1 = createGauge(watercooling_canvas_1, gauge_default_options, 60, 20, 32, 25); 
-var watercooling_gauge_2 = createGauge(watercooling_canvas_2, gauge_default_options, 3000, 0, 32, 1000); 
-var watercooling_gauge_3 = createGauge(watercooling_canvas_3, gauge_default_options, 3000, 0, 32, 2000); 
+var watercooling_gauge_1 = createGauge(watercooling_canvas_1, gauge_default_options, 60, 20, 32, 60); 
+var watercooling_gauge_2 = createGauge(watercooling_canvas_2, gauge_default_options, 3000, 0, 32, 3000); 
+var watercooling_gauge_3 = createGauge(watercooling_canvas_3, gauge_default_options, 3000, 0, 32, 3000); 
 
-var other_gauge_1 = createGauge(other_canvas_1, gauge_default_options, 100, 0, 32, 50);
-var other_gauge_2 = createGauge(other_canvas_2, gauge_default_options, 100, 0, 32, 50);
-var other_gauge_3 = createGauge(other_canvas_3, gauge_default_options, 10, 0, 32, 5);
+var other_gauge_1 = createGauge(other_canvas_1, gauge_default_options, 100, 0, 32, 100);
+var other_gauge_2 = createGauge(other_canvas_2, gauge_default_options, 100, 0, 32, 100);
+var other_gauge_3 = createGauge(other_canvas_3, gauge_default_options, 10, 0, 32, 10);
 
 //getData();
 setInterval(function(){ getData(); }, 1000);        

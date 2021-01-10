@@ -165,37 +165,3 @@ print('Firewall rules : OK.')
 print('\nUSB OTG setup completed without errors. Your device should have internet access !')
 
 
-
-
-# PREVIOUS CODE :
-
-# backup & clear dmesg
-# subprocess.check_output('dmesg > dmesg-`date +%d%m%Y`.log', shell=True)
-# subprocess.check_output('dmesg -c', shell=True)
-# print('dmesg backed up and cleared.')
-
-# # look for USB OTG interface name 
-# int_name = subprocess.check_output("dmesg | grep 'renamed from usb0' | tail -1 | awk '{print $4}' | sed 's/.$//'", shell=True).decode('utf-8')
-
-
-# while (int_name == ''):
-#     int_name = subprocess.check_output("dmesg | grep 'renamed from usb0' | tail -1 | awk '{print $4}' | sed 's/.$//'", shell=True).decode('utf-8')
-#     time.sleep(2)
-#
-# print('OTG Interface found :', int_name)
-#
-# time.sleep(1)
-#
-# # set interface UP
-# subprocess.check_output('ip link set up dev '+int_name, shell=True)
-#
-# print('OTF interface activated.')
-#
-# # set interface IP
-# subprocess.check_output('ip addr add 192.168.42.1/24 dev '+int_name, shell=True)
-#
-# time.sleep(2)
-#
-# # check IP assigned
-# ip = subprocess.check_output("ip a | grep -EA1 '"+int_name+"' | grep inet | awk '{print $2}'", shell=True).decode('utf-8')
-# print('Succesfully assigned', ip, 'to interface',int_name,'!')
