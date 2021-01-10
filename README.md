@@ -26,7 +26,13 @@ For now, it's only designed to monitor AMD GPU stats. Nvidia GPU support should 
 
 ### General TODO-list :
 - ~~fix some gauges names~~
-- config file (to specify components to monitor)
+- config file (to specify components to monitor and subnet to use)
+- get ping stats and display it on the last gauge remaining
+- add a Flask Python API which will run on the RPi (to reboot & shutdown it easily)
+- change subnet used (currently using 192.168.42.0/24, we don't need that much)
+- bug fix : forever loading when the computer have no internet access (download gauge.js & google fonts ?)
+
+### 
 
 ## How it works
 
