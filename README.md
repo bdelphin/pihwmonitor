@@ -16,9 +16,10 @@ For now, it's only designed to monitor AMD GPU stats. Nvidia GPU support should 
 ### Windows TODO-list :
 - test psutil under windows (should work)
 - test liquidctl under windows (should work)
-- find a Radeontop alternative to monitor Radeon GPU under windows (possible candidate : https://github.com/GPUOpen-Tools/gpu_performance_api)
+- find a Radeontop alternative to monitor AMD GPU under windows (possible candidate : https://github.com/GPUOpen-Tools/gpu_performance_api)
+- find a gpustat alternative to monitor Nvidia GPU under windows
 - automate USB OTG network configuration
-- create a script which will be launched by a planned task at boot (or create a serice ?)
+- create a script which will be launched by a planned task at boot (or create a service ?)
 - create a setup.exe file, for automating the planned task creation
 
 ### GNU/Linux TODO-list :
@@ -67,7 +68,7 @@ The display used is a 5" Raspberry Pi HDMI monitor with resistive touchscreen. I
 
 Currently, PiHWMonitor is designed and will only work with AMD GPU. It should work with any Radeontop compatible AMD GPU. It's also currently designed to monitor an AIO liquid CPU cooler with liquidctl (find liquid cooler supported here : https://github.com/liquidctl/liquidctl#supported-devices).
 
-Since it has only been tested on my computer, chances are high that even with an AMD GPU and a liquidctl compatible liquid CPU cooler it will not work flawlessly,
+Since it has only been tested on my computer, chances are high that even with an AMD GPU and a liquidctl compatible liquid CPU cooler it will not work flawlessly ...
 
 But, if you want to give it a try, please do ! (you can contact me for help if needed)
 
