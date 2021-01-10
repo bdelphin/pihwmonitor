@@ -86,7 +86,7 @@ var watercooling_gauge_3 = createGauge(watercooling_canvas_3, gauge_default_opti
 
 var other_gauge_1 = createGauge(other_canvas_1, gauge_default_options, 100, 0, 32, 100);
 var other_gauge_2 = createGauge(other_canvas_2, gauge_default_options, 100, 0, 32, 100);
-var other_gauge_3 = createGauge(other_canvas_3, gauge_default_options, 10, 0, 32, 10);
+var other_gauge_3 = createGauge(other_canvas_3, gauge_default_options, 70, 20, 32, 70);
 
 //getData();
 setInterval(function(){ getData(); }, 1000);        
@@ -250,6 +250,14 @@ function showData(jsonObj)
                 // other_header_2.textContent = component['probe'][i].name;
                 other_header_2.textContent = "SSD";
                 other_value_2.textContent = component['probe'][i].current + ' %';
+                continue;
+            }
+            else if(component['probe'][i].name.includes('Composite'))
+            {
+                other_gauge_3.set(component['probe'][i].current);
+                // other_header_2.textContent = component['probe'][i].name;
+                other_header_3.textContent = "SSD T°";
+                other_value_3.textContent = component['probe'][i].current + ' C°';
                 continue;
             }
 

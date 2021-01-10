@@ -75,6 +75,7 @@ def api():
     json += '{ "type": "percent", "name": "RAM Usage", "current": "'+str(ram.percent)+'"},'
     #json += '{ "type": "percent", "name": "Disk Usage", "current": "'+diskspace[4][:-1]+'"},'    
     json += '{ "type": "percent", "name": "Disk Usage", "current": "'+str(diskusage.percent)+'"},'    
+    json += '{ "type": "temp", "name": "'+temps['nvme'][0].label+'", "current": "'+str("{:.1f}".format(temps['nvme'][0].current))+'", "high": "'+str(temps['nvme'][0].high)+'", "critical": "'+str(temps['nvme'][0].critical)+'" },'    
     json += '{ "type": "ram_usage", "name": "RAM Used/Total", "current": "'+psutil._common.bytes2human(ram.total-ram.available)[:-1]+'", "max": "'+psutil._common.bytes2human(ram.total)[:-1]+'"}'
     json += ']'
     json += '}'
