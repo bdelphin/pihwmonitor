@@ -1,7 +1,18 @@
 import subprocess
 import time
+import configparser
 
-ip = '192.168.42.1/24'
+# Load config file 
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+# Grab subnet from config file and generate host IP
+subnet = config['GLOBAL']['Subnet']
+ip = subnet.split('/')[0]
+ip = ip.split('.')[0] + '.' + ip.split('.')[1] + '.' + ip.split('.')[2] + '.' + str(int(ip.split('.')[3]) + 1)
+ip = ip + '/' + subnet.split('/')[1]
+
+# ip = '192.168.42.1/24'
 
 # check every 10 seconds if OTG IP is still assigned
 # if not, relaunch otg_ip.py
