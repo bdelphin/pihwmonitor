@@ -24,10 +24,6 @@ def api():
     for part in psutil.disk_partitions():
         if part.mountpoint == '/' or part.mountpoint == 'C:\\':
             diskusage = psutil.disk_usage(part.mountpoint)
-    #diskusage(total=268419072, used=60038144, free=208380928, percent=22.4)
-    #diskspace = disk()
-
-    #json += '"RAM Usage":"'+str(ram.percent)+'%"'
     
     json = '{'
     
@@ -85,14 +81,7 @@ def api():
 
     return json
 
-
-def disk():
-    out = subprocess.check_output("df -h | grep nvme0n1p3", shell=True).decode("utf-8").split("/")[2].split(' ')
-    out = list(filter(None, out))
-    return out
-
 if __name__ == '__main__':
-    #os.system('radeontop -d /tmp/radeontop.log')
     app.run(host='0.0.0.0')
 
 
