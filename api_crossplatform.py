@@ -5,6 +5,7 @@ import os
 import platform
 import psutil
 import subprocess
+import wmi
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -13,13 +14,25 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 @app.route('/')
 @cross_origin()
 def api():
-    # Temps (keys : nvme, k10temp, amdgpu)
+    # if under Unix/Linux/OSX :
     if os.name != 'nt':
+        # Temps (keys : nvme, k10temp, amdgpu)
         temps = psutil.sensors_temperatures()
         # Fans (only GPU) 
         fans = psutil.sensors_fans()
         # Watercooling
         h2o = subprocess.check_output('/usr/bin/liquidctl status', shell=True)
+    # if under Windows
+    elif os.name == 'nt':
+        w = wmi.WMI(namespace="root\OpenHardwareMonitor")
+        sensors = []
+        for sensor in w.Sensor():
+            dict = {}
+            dict['name'] = sensor.Name
+            dict['value'] = sensor.Value
+            dict['type'] = sensor.SensorType
+            sensors.append(dict)
+
     # RAM
     ram = psutil.virtual_memory()
     # Disk usage
