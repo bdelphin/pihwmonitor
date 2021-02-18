@@ -5,7 +5,11 @@ import os
 import platform
 import psutil
 import subprocess
-import wmi
+
+if os.name == 'nt':
+    import openHW
+    hw = openHW.HardwareInfos()
+    components = hw.getComponents()
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -23,15 +27,8 @@ def api():
         # Watercooling
         h2o = subprocess.check_output('/usr/bin/liquidctl status', shell=True)
     # if under Windows
-    elif os.name == 'nt':
-        w = wmi.WMI(namespace="root\OpenHardwareMonitor")
-        sensors = []
-        for sensor in w.Sensor():
-            dict = {}
-            dict['name'] = sensor.Name
-            dict['value'] = sensor.Value
-            dict['type'] = sensor.SensorType
-            sensors.append(dict)
+    #elif os.name == 'nt':
+       # components = hw.getComponents()
 
     # RAM
     ram = psutil.virtual_memory()
@@ -54,7 +51,7 @@ def api():
         json += '"components": ['
 
         json += '{'
-        json += '"label": "GPU - RX5700 XT",'
+        json += '"label": "'+components[0]['ComponentType']+' - '+components[0]['ComponentName']+'",'
         json += '"probe": ['
         json += '{ "type": "temp", "name": "no data", "current": "no data", "high": "no data", "critical": "no data" },'
         json += '{ "type": "percent", "name": "gpu load", "current": "no data"},'
